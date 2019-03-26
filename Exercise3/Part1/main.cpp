@@ -3,44 +3,39 @@
 #include <stddef.h>
 #include <util/delay.h>
 
-constexpr int ALL_HIGH = 0xFF;
-constexpr int ALL_LOW = 0;
+#include <Pins.h>
+#include <Port.h>
 
-int blink();
-void led(uint8_t count);
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wmissing-noreturn"
 
 int main() {
-    DDRD = ALL_LOW;
-    DDRB = ALL_HIGH;
+    Pins<Port::D> switches;
+    switches.setType<IOType::Input>();
 
-    PORTB = ALL_HIGH;
+    Pins<Port::B> leds;
+    leds.setType<IOType::Output>();
 
-    blink();
+    // Disable all LEDs. LEDs are active low
+    leds.writeAllHigh();
 
-    return 0;
-}
-
-int blink() {
     uint8_t count = 0;
     bool isPressed = false;
-    uint8_t flip = 0;
 
     while (true) {
-        flip  = PIND ^ ALL_HIGH;
+        const auto anyLow = switches.anyLow<PortType::Pin>();
 
-        if (!isPressed && flip) {
+        if (!isPressed && anyLow) {
             isPressed = true;
-            led(++count);
+            leds.writeMaskInverted(++count);
         }
 
-        if (!flip) {
+        if (!anyLow) {
             isPressed = false;
             _delay_ms(100);
         }
-
     }
+
 }
 
-void led(uint8_t count) {
-    PORTB = static_cast<uint8_t>(count ^ ALL_HIGH);
-}
+#pragma clang diagnostic pop

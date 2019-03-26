@@ -2,6 +2,8 @@ SET(PART_NAME e3p1)
 
 add_executable(${PART_NAME} main.cpp)
 
+target_link_libraries(${PART_NAME} util)
+
 add_custom_command(TARGET ${PART_NAME} POST_BUILD
         COMMAND avr-objcopy -O ihex ${PART_NAME} ${PART_NAME}.hex
         WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}

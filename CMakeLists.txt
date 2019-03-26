@@ -11,5 +11,7 @@ add_definitions(-DF_CPU=1000000)
 
 project(AVR)
 
+add_subdirectory(Util)
+
 add_subdirectory(Exercise3)
 

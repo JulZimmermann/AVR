@@ -15,7 +15,7 @@ int main() {
     PORTB = 0;
     PIND = 0;
 
-    //blink();
+    blink();
 
     return 0;
 }

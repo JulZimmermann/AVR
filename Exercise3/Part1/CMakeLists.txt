@@ -7,5 +7,5 @@ add_custom_command(TARGET ${PART_NAME} POST_BUILD
         WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
         COMMENT "Creating HEX File")
 
-add_custom_target(${PART_NAME}_flash COMMAND avrdude -p m32 -c stk500 -U flash:w:${PART_NAME}.hex -F -P ${PORT}
+add_custom_target(${PART_NAME}_flash COMMAND avrdude -p m32 -c stk500 -U flash:w:${PART_NAME}.hex -P ${PORT}
                                      DEPENDS ${PART_NAME})

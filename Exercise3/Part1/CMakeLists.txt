@@ -2,8 +2,6 @@ SET(PART_NAME e3p1)
 
 add_executable(${PART_NAME} main.cpp)
 
-set_target_properties(${PART_NAME} PROPERTIES COMPILE_FLAGS "-save-temps")
-
 add_custom_command(TARGET ${PART_NAME} POST_BUILD
         COMMAND avr-objcopy -O ihex ${PART_NAME} ${PART_NAME}.hex
         WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}

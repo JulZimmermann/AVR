@@ -1,14 +1,13 @@
 cmake_minimum_required(VERSION 3.13)
 
-set(AVR_MCU atmega32)
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
 
-# TODO: Check why AVR_MCU doesn't set D__AVR_ATmega32__
-add_definitions(-D__AVR_ATmega32__)
+set(CMAKE_CXX_FLAGS_RELEASE "-mmcu=atmega32")
 add_definitions(-DF_CPU=1000000)
 
 project(AVR)
-
-set(CMAKE_CXX_STANDARD 17)
 
 add_subdirectory(Exercise3)
 

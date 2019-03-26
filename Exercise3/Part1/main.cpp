@@ -27,7 +27,7 @@ int blink() {
     while (true) {
         flip  = (PIND ^ 0xFF);
 
-        if (!isPressed && PIND) {
+        if (!isPressed && flip) {
             isPressed = true;
             led(++count);
         }

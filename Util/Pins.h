@@ -5,7 +5,7 @@
 #ifndef AVR_LED_H
 #define AVR_LED_H
 
-#include "../../../../../../usr/avr/sys-root/include/avr/io.h"
+#include <avr/io.h>
 
 #include "Port.h"
 

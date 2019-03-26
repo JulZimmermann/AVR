@@ -3,17 +3,17 @@
 #include <stddef.h>
 #include <util/delay.h>
 
-constexpr int ALL_OUTPUT = 0xff;
-constexpr int ALL_INPUT = 0;
+constexpr int ALL_HIGH = 0xFF;
+constexpr int ALL_LOW = 0;
 
 int blink();
 void led(uint8_t count);
 
 int main() {
-    DDRD = ALL_INPUT;
-    DDRB = ALL_OUTPUT;
+    DDRD = ALL_LOW;
+    DDRB = ALL_HIGH;
 
-    PORTB = 0xFF;
+    PORTB = ALL_HIGH;
 
     blink();
 
@@ -26,7 +26,7 @@ int blink() {
     uint8_t flip = 0;
 
     while (true) {
-        flip  = PIND ^ 0xFF;
+        flip  = PIND ^ ALL_HIGH;
 
         if (!isPressed && flip) {
             isPressed = true;
@@ -42,5 +42,5 @@ int blink() {
 }
 
 void led(uint8_t count) {
-    PORTB = static_cast<uint8_t>(count ^ 0xFF);
+    PORTB = static_cast<uint8_t>(count ^ ALL_HIGH);
 }

@@ -10,7 +10,7 @@ add_definitions(-DF_CPU=1000000)
 
 project(AVR)
 
-SET(PORT COM9)
+SET(PORT /dev/ttyUSB0)
 
 add_subdirectory(Exercise3)
 

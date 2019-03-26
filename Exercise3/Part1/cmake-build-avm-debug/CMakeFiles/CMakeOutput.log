@@ -1,0 +1,562 @@
+The target system is: Generic -  - 
+The host system is: Linux - 4.15.0-45-generic - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/avr-gcc 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/3.13.2/CompilerIdC/a.out"
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+Compiler: /usr/bin/avr-g++ 
+Build flags: 
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+
+The CXX compiler identification is GNU, found in "/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/3.13.2/CompilerIdCXX/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_dea89/fast"
+/usr/bin/make -f CMakeFiles/cmTC_dea89.dir/build.make CMakeFiles/cmTC_dea89.dir/build
+make[1]: Entering directory '/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_dea89.dir/testCCompiler.c.obj
+/usr/bin/avr-gcc    -o CMakeFiles/cmTC_dea89.dir/testCCompiler.c.obj   -c /home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_dea89
+/home/konrad/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dea89.dir/link.txt --verbose=1
+/usr/bin/avr-gcc      CMakeFiles/cmTC_dea89.dir/testCCompiler.c.obj  -o cmTC_dea89 
+make[1]: Leaving directory '/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_20761/fast"
+/usr/bin/make -f CMakeFiles/cmTC_20761.dir/build.make CMakeFiles/cmTC_20761.dir/build
+make[1]: Entering directory '/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_20761.dir/CMakeCCompilerABI.c.obj
+/usr/bin/avr-gcc    -o CMakeFiles/cmTC_20761.dir/CMakeCCompilerABI.c.obj   -c /home/konrad/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/share/cmake-3.13/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_20761
+/home/konrad/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_20761.dir/link.txt --verbose=1
+/usr/bin/avr-gcc     -v CMakeFiles/cmTC_20761.dir/CMakeCCompilerABI.c.obj  -o cmTC_20761 
+Using built-in specs.
+Reading specs from /usr/lib/gcc/avr/5.4.0/device-specs/specs-avr2
+COLLECT_GCC=/usr/bin/avr-gcc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/avr/5.4.0/lto-wrapper
+Target: avr
+Configured with: ../gcc/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr CFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ' CPPFLAGS='-Wdate-time -D_FORTIFY_SOURCE=2' CXXFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ' FCFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong' FFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong' GCJFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong' LDFLAGS='-Wl,-Bsymbolic-functions -Wl,-z,relro' OBJCFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ' OBJCXXFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat '
+Thread model: single
+gcc version 5.4.0 (GCC) 
+COMPILER_PATH=/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/5.4.0/../../../avr/bin/
+LIBRARY_PATH=/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/5.4.0/../../../avr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_20761' '-specs=device-specs/specs-avr2'
+ /usr/lib/gcc/avr/5.4.0/collect2 -plugin /usr/lib/gcc/avr/5.4.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/avr/5.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccuyn1ra.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lc --pmem-wrap-around=8k -o cmTC_20761 -L/usr/lib/gcc/avr/5.4.0 -L/usr/lib/gcc/avr/5.4.0/../../../avr/lib CMakeFiles/cmTC_20761.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lm -lc --end-group
+make[1]: Leaving directory '/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(avr-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_20761/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_20761.dir/build.make CMakeFiles/cmTC_20761.dir/build]
+  ignore line: [make[1]: Entering directory '/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_20761.dir/CMakeCCompilerABI.c.obj]
+  ignore line: [/usr/bin/avr-gcc    -o CMakeFiles/cmTC_20761.dir/CMakeCCompilerABI.c.obj   -c /home/konrad/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/share/cmake-3.13/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_20761]
+  ignore line: [/home/konrad/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_20761.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/avr-gcc     -v CMakeFiles/cmTC_20761.dir/CMakeCCompilerABI.c.obj  -o cmTC_20761 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [Reading specs from /usr/lib/gcc/avr/5.4.0/device-specs/specs-avr2]
+  ignore line: [COLLECT_GCC=/usr/bin/avr-gcc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/avr/5.4.0/lto-wrapper]
+  ignore line: [Target: avr]
+  ignore line: [Configured with: ../gcc/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr CFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ' CPPFLAGS='-Wdate-time -D_FORTIFY_SOURCE=2' CXXFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ' FCFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong' FFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong' GCJFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong' LDFLAGS='-Wl,-Bsymbolic-functions -Wl,-z,relro' OBJCFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ' OBJCXXFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ']
+  ignore line: [Thread model: single]
+  ignore line: [gcc version 5.4.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/5.4.0/../../../avr/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/5.4.0/../../../avr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_20761' '-specs=device-specs/specs-avr2']
+  link line: [ /usr/lib/gcc/avr/5.4.0/collect2 -plugin /usr/lib/gcc/avr/5.4.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/avr/5.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccuyn1ra.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lc --pmem-wrap-around=8k -o cmTC_20761 -L/usr/lib/gcc/avr/5.4.0 -L/usr/lib/gcc/avr/5.4.0/../../../avr/lib CMakeFiles/cmTC_20761.dir/CMakeCCompilerABI.c.obj --start-group -lgcc -lm -lc --end-group]
+    arg [/usr/lib/gcc/avr/5.4.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/avr/5.4.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/avr/5.4.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccuyn1ra.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lm] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [--pmem-wrap-around=8k] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_20761] ==> ignore
+    arg [-L/usr/lib/gcc/avr/5.4.0] ==> dir [/usr/lib/gcc/avr/5.4.0]
+    arg [-L/usr/lib/gcc/avr/5.4.0/../../../avr/lib] ==> dir [/usr/lib/gcc/avr/5.4.0/../../../avr/lib]
+    arg [CMakeFiles/cmTC_20761.dir/CMakeCCompilerABI.c.obj] ==> ignore
+    arg [--start-group] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lm] ==> lib [m]
+    arg [-lc] ==> lib [c]
+    arg [--end-group] ==> ignore
+  collapse library dir [/usr/lib/gcc/avr/5.4.0] ==> [/usr/lib/gcc/avr/5.4.0]
+  collapse library dir [/usr/lib/gcc/avr/5.4.0/../../../avr/lib] ==> [/usr/lib/avr/lib]
+  implicit libs: [gcc;m;c]
+  implicit dirs: [/usr/lib/gcc/avr/5.4.0;/usr/lib/avr/lib]
+  implicit fwks: []
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d7d82/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d7d82.dir/build.make CMakeFiles/cmTC_d7d82.dir/build
+make[1]: Entering directory '/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d7d82.dir/feature_tests.c.obj
+/usr/bin/avr-gcc   -std=c11 -o CMakeFiles/cmTC_d7d82.dir/feature_tests.c.obj   -c /home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_d7d82
+/home/konrad/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d7d82.dir/link.txt --verbose=1
+/usr/bin/avr-gcc      CMakeFiles/cmTC_d7d82.dir/feature_tests.c.obj  -o cmTC_d7d82 
+make[1]: Leaving directory '/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5195d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5195d.dir/build.make CMakeFiles/cmTC_5195d.dir/build
+make[1]: Entering directory '/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5195d.dir/feature_tests.c.obj
+/usr/bin/avr-gcc   -std=c99 -o CMakeFiles/cmTC_5195d.dir/feature_tests.c.obj   -c /home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_5195d
+/home/konrad/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5195d.dir/link.txt --verbose=1
+/usr/bin/avr-gcc      CMakeFiles/cmTC_5195d.dir/feature_tests.c.obj  -o cmTC_5195d 
+make[1]: Leaving directory '/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9e886/fast"
+/usr/bin/make -f CMakeFiles/cmTC_9e886.dir/build.make CMakeFiles/cmTC_9e886.dir/build
+make[1]: Entering directory '/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9e886.dir/feature_tests.c.obj
+/usr/bin/avr-gcc   -std=c90 -o CMakeFiles/cmTC_9e886.dir/feature_tests.c.obj   -c /home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_9e886
+/home/konrad/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9e886.dir/link.txt --verbose=1
+/usr/bin/avr-gcc      CMakeFiles/cmTC_9e886.dir/feature_tests.c.obj  -o cmTC_9e886 
+make[1]: Leaving directory '/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
+Determining if the CXX compiler works passed with the following output:
+Change Dir: /home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_45be2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_45be2.dir/build.make CMakeFiles/cmTC_45be2.dir/build
+make[1]: Entering directory '/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_45be2.dir/testCXXCompiler.cxx.obj
+/usr/bin/avr-g++     -o CMakeFiles/cmTC_45be2.dir/testCXXCompiler.cxx.obj -c /home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_45be2
+/home/konrad/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_45be2.dir/link.txt --verbose=1
+/usr/bin/avr-g++       CMakeFiles/cmTC_45be2.dir/testCXXCompiler.cxx.obj  -o cmTC_45be2 
+make[1]: Leaving directory '/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp'
+
+
+Detecting CXX compiler ABI info compiled with the following output:
+Change Dir: /home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a8695/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a8695.dir/build.make CMakeFiles/cmTC_a8695.dir/build
+make[1]: Entering directory '/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_a8695.dir/CMakeCXXCompilerABI.cpp.obj
+/usr/bin/avr-g++     -o CMakeFiles/cmTC_a8695.dir/CMakeCXXCompilerABI.cpp.obj -c /home/konrad/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/share/cmake-3.13/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_a8695
+/home/konrad/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a8695.dir/link.txt --verbose=1
+/usr/bin/avr-g++      -v CMakeFiles/cmTC_a8695.dir/CMakeCXXCompilerABI.cpp.obj  -o cmTC_a8695 
+Using built-in specs.
+Reading specs from /usr/lib/gcc/avr/5.4.0/device-specs/specs-avr2
+COLLECT_GCC=/usr/bin/avr-g++
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/avr/5.4.0/lto-wrapper
+Target: avr
+Configured with: ../gcc/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr CFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ' CPPFLAGS='-Wdate-time -D_FORTIFY_SOURCE=2' CXXFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ' FCFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong' FFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong' GCJFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong' LDFLAGS='-Wl,-Bsymbolic-functions -Wl,-z,relro' OBJCFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ' OBJCXXFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat '
+Thread model: single
+gcc version 5.4.0 (GCC) 
+COMPILER_PATH=/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/5.4.0/../../../avr/bin/
+LIBRARY_PATH=/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/5.4.0/../../../avr/lib/
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a8695' '-specs=device-specs/specs-avr2'
+ /usr/lib/gcc/avr/5.4.0/collect2 -plugin /usr/lib/gcc/avr/5.4.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/avr/5.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccNpSgZk.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lc --pmem-wrap-around=8k -o cmTC_a8695 -L/usr/lib/gcc/avr/5.4.0 -L/usr/lib/gcc/avr/5.4.0/../../../avr/lib CMakeFiles/cmTC_a8695.dir/CMakeCXXCompilerABI.cpp.obj -lgcc -lm --start-group -lgcc -lm -lc --end-group
+make[1]: Leaving directory '/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp'
+
+
+Parsed CXX implicit link information from above output:
+  link line regex: [^( *|.*[/\])(avr-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_a8695/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_a8695.dir/build.make CMakeFiles/cmTC_a8695.dir/build]
+  ignore line: [make[1]: Entering directory '/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_a8695.dir/CMakeCXXCompilerABI.cpp.obj]
+  ignore line: [/usr/bin/avr-g++     -o CMakeFiles/cmTC_a8695.dir/CMakeCXXCompilerABI.cpp.obj -c /home/konrad/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/share/cmake-3.13/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_a8695]
+  ignore line: [/home/konrad/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a8695.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/avr-g++      -v CMakeFiles/cmTC_a8695.dir/CMakeCXXCompilerABI.cpp.obj  -o cmTC_a8695 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [Reading specs from /usr/lib/gcc/avr/5.4.0/device-specs/specs-avr2]
+  ignore line: [COLLECT_GCC=/usr/bin/avr-g++]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/avr/5.4.0/lto-wrapper]
+  ignore line: [Target: avr]
+  ignore line: [Configured with: ../gcc/configure -v --enable-languages=c,c++ --prefix=/usr/lib --infodir=/usr/share/info --mandir=/usr/share/man --bindir=/usr/bin --libexecdir=/usr/lib --libdir=/usr/lib --enable-shared --with-system-zlib --enable-long-long --enable-nls --without-included-gettext --disable-libssp --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=avr CFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ' CPPFLAGS='-Wdate-time -D_FORTIFY_SOURCE=2' CXXFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ' FCFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong' FFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong' GCJFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong' LDFLAGS='-Wl,-Bsymbolic-functions -Wl,-z,relro' OBJCFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ' OBJCXXFLAGS='-g -O2 -fdebug-prefix-map=/build/gcc-avr-n0nSsH/gcc-avr-5.4.0+Atmel3.6.0=. -fstack-protector-strong -Wformat ']
+  ignore line: [Thread model: single]
+  ignore line: [gcc version 5.4.0 (GCC) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/:/usr/lib/gcc/avr/5.4.0/../../../avr/bin/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/avr/5.4.0/:/usr/lib/gcc/avr/5.4.0/../../../avr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_a8695' '-specs=device-specs/specs-avr2']
+  link line: [ /usr/lib/gcc/avr/5.4.0/collect2 -plugin /usr/lib/gcc/avr/5.4.0/liblto_plugin.so -plugin-opt=/usr/lib/gcc/avr/5.4.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccNpSgZk.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lm -plugin-opt=-pass-through=-lc --pmem-wrap-around=8k -o cmTC_a8695 -L/usr/lib/gcc/avr/5.4.0 -L/usr/lib/gcc/avr/5.4.0/../../../avr/lib CMakeFiles/cmTC_a8695.dir/CMakeCXXCompilerABI.cpp.obj -lgcc -lm --start-group -lgcc -lm -lc --end-group]
+    arg [/usr/lib/gcc/avr/5.4.0/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/avr/5.4.0/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/avr/5.4.0/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccNpSgZk.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lm] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [--pmem-wrap-around=8k] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_a8695] ==> ignore
+    arg [-L/usr/lib/gcc/avr/5.4.0] ==> dir [/usr/lib/gcc/avr/5.4.0]
+    arg [-L/usr/lib/gcc/avr/5.4.0/../../../avr/lib] ==> dir [/usr/lib/gcc/avr/5.4.0/../../../avr/lib]
+    arg [CMakeFiles/cmTC_a8695.dir/CMakeCXXCompilerABI.cpp.obj] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lm] ==> lib [m]
+    arg [--start-group] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [-lm] ==> lib [m]
+    arg [-lc] ==> lib [c]
+    arg [--end-group] ==> ignore
+  collapse library dir [/usr/lib/gcc/avr/5.4.0] ==> [/usr/lib/gcc/avr/5.4.0]
+  collapse library dir [/usr/lib/gcc/avr/5.4.0/../../../avr/lib] ==> [/usr/lib/avr/lib]
+  implicit libs: [gcc;m;gcc;m;c]
+  implicit dirs: [/usr/lib/gcc/avr/5.4.0;/usr/lib/avr/lib]
+  implicit fwks: []
+
+
+
+
+Detecting CXX [-std=c++1z] compiler features compiled with the following output:
+Change Dir: /home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c4d4f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c4d4f.dir/build.make CMakeFiles/cmTC_c4d4f.dir/build
+make[1]: Entering directory '/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_c4d4f.dir/feature_tests.cxx.obj
+/usr/bin/avr-g++    -std=c++1z -o CMakeFiles/cmTC_c4d4f.dir/feature_tests.cxx.obj -c /home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_c4d4f
+/home/konrad/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c4d4f.dir/link.txt --verbose=1
+/usr/bin/avr-g++       CMakeFiles/cmTC_c4d4f.dir/feature_tests.cxx.obj  -o cmTC_c4d4f 
+make[1]: Leaving directory '/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++14] compiler features compiled with the following output:
+Change Dir: /home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d7de8/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d7de8.dir/build.make CMakeFiles/cmTC_d7de8.dir/build
+make[1]: Entering directory '/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_d7de8.dir/feature_tests.cxx.obj
+/usr/bin/avr-g++    -std=c++14 -o CMakeFiles/cmTC_d7de8.dir/feature_tests.cxx.obj -c /home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_d7de8
+/home/konrad/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d7de8.dir/link.txt --verbose=1
+/usr/bin/avr-g++       CMakeFiles/cmTC_d7de8.dir/feature_tests.cxx.obj  -o cmTC_d7de8 
+make[1]: Leaving directory '/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:1cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:1cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:1cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:1cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:1cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:1cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:1cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:1cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:1cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:1cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++11] compiler features compiled with the following output:
+Change Dir: /home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_70df9/fast"
+/usr/bin/make -f CMakeFiles/cmTC_70df9.dir/build.make CMakeFiles/cmTC_70df9.dir/build
+make[1]: Entering directory '/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_70df9.dir/feature_tests.cxx.obj
+/usr/bin/avr-g++    -std=c++11 -o CMakeFiles/cmTC_70df9.dir/feature_tests.cxx.obj -c /home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_70df9
+/home/konrad/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_70df9.dir/link.txt --verbose=1
+/usr/bin/avr-g++       CMakeFiles/cmTC_70df9.dir/feature_tests.cxx.obj  -o cmTC_70df9 
+make[1]: Leaving directory '/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:1cxx_alias_templates
+    Feature record: CXX_FEATURE:1cxx_alignas
+    Feature record: CXX_FEATURE:1cxx_alignof
+    Feature record: CXX_FEATURE:1cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:1cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:1cxx_constexpr
+    Feature record: CXX_FEATURE:0cxx_contextual_conversions
+    Feature record: CXX_FEATURE:1cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:1cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:1cxx_default_function_template_args
+    Feature record: CXX_FEATURE:1cxx_defaulted_functions
+    Feature record: CXX_FEATURE:1cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:1cxx_delegating_constructors
+    Feature record: CXX_FEATURE:1cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:1cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:1cxx_explicit_conversions
+    Feature record: CXX_FEATURE:1cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:1cxx_extern_templates
+    Feature record: CXX_FEATURE:1cxx_final
+    Feature record: CXX_FEATURE:1cxx_func_identifier
+    Feature record: CXX_FEATURE:1cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:1cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:1cxx_inline_namespaces
+    Feature record: CXX_FEATURE:1cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:1cxx_local_type_template_args
+    Feature record: CXX_FEATURE:1cxx_long_long_type
+    Feature record: CXX_FEATURE:1cxx_noexcept
+    Feature record: CXX_FEATURE:1cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:1cxx_nullptr
+    Feature record: CXX_FEATURE:1cxx_override
+    Feature record: CXX_FEATURE:1cxx_range_for
+    Feature record: CXX_FEATURE:1cxx_raw_string_literals
+    Feature record: CXX_FEATURE:1cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:1cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:1cxx_rvalue_references
+    Feature record: CXX_FEATURE:1cxx_sizeof_member
+    Feature record: CXX_FEATURE:1cxx_static_assert
+    Feature record: CXX_FEATURE:1cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:1cxx_thread_local
+    Feature record: CXX_FEATURE:1cxx_trailing_return_types
+    Feature record: CXX_FEATURE:1cxx_unicode_literals
+    Feature record: CXX_FEATURE:1cxx_uniform_initialization
+    Feature record: CXX_FEATURE:1cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:1cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:1cxx_variadic_macros
+    Feature record: CXX_FEATURE:1cxx_variadic_templates
+
+
+Detecting CXX [-std=c++98] compiler features compiled with the following output:
+Change Dir: /home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_31507/fast"
+/usr/bin/make -f CMakeFiles/cmTC_31507.dir/build.make CMakeFiles/cmTC_31507.dir/build
+make[1]: Entering directory '/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_31507.dir/feature_tests.cxx.obj
+/usr/bin/avr-g++    -std=c++98 -o CMakeFiles/cmTC_31507.dir/feature_tests.cxx.obj -c /home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_31507
+/home/konrad/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/183.5429.37/bin/cmake/linux/bin/cmake -E cmake_link_script CMakeFiles/cmTC_31507.dir/link.txt --verbose=1
+/usr/bin/avr-g++       CMakeFiles/cmTC_31507.dir/feature_tests.cxx.obj  -o cmTC_31507 
+make[1]: Leaving directory '/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/CMakeTmp'
+
+
+    Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
+    Feature record: CXX_FEATURE:0cxx_alias_templates
+    Feature record: CXX_FEATURE:0cxx_alignas
+    Feature record: CXX_FEATURE:0cxx_alignof
+    Feature record: CXX_FEATURE:0cxx_attributes
+    Feature record: CXX_FEATURE:0cxx_attribute_deprecated
+    Feature record: CXX_FEATURE:0cxx_auto_type
+    Feature record: CXX_FEATURE:0cxx_binary_literals
+    Feature record: CXX_FEATURE:0cxx_constexpr
+    Feature record: CXX_FEATURE:0cxx_contextual_conversions
+    Feature record: CXX_FEATURE:0cxx_decltype
+    Feature record: CXX_FEATURE:0cxx_decltype_auto
+    Feature record: CXX_FEATURE:0cxx_decltype_incomplete_return_types
+    Feature record: CXX_FEATURE:0cxx_default_function_template_args
+    Feature record: CXX_FEATURE:0cxx_defaulted_functions
+    Feature record: CXX_FEATURE:0cxx_defaulted_move_initializers
+    Feature record: CXX_FEATURE:0cxx_delegating_constructors
+    Feature record: CXX_FEATURE:0cxx_deleted_functions
+    Feature record: CXX_FEATURE:0cxx_digit_separators
+    Feature record: CXX_FEATURE:0cxx_enum_forward_declarations
+    Feature record: CXX_FEATURE:0cxx_explicit_conversions
+    Feature record: CXX_FEATURE:0cxx_extended_friend_declarations
+    Feature record: CXX_FEATURE:0cxx_extern_templates
+    Feature record: CXX_FEATURE:0cxx_final
+    Feature record: CXX_FEATURE:0cxx_func_identifier
+    Feature record: CXX_FEATURE:0cxx_generalized_initializers
+    Feature record: CXX_FEATURE:0cxx_generic_lambdas
+    Feature record: CXX_FEATURE:0cxx_inheriting_constructors
+    Feature record: CXX_FEATURE:0cxx_inline_namespaces
+    Feature record: CXX_FEATURE:0cxx_lambdas
+    Feature record: CXX_FEATURE:0cxx_lambda_init_captures
+    Feature record: CXX_FEATURE:0cxx_local_type_template_args
+    Feature record: CXX_FEATURE:0cxx_long_long_type
+    Feature record: CXX_FEATURE:0cxx_noexcept
+    Feature record: CXX_FEATURE:0cxx_nonstatic_member_init
+    Feature record: CXX_FEATURE:0cxx_nullptr
+    Feature record: CXX_FEATURE:0cxx_override
+    Feature record: CXX_FEATURE:0cxx_range_for
+    Feature record: CXX_FEATURE:0cxx_raw_string_literals
+    Feature record: CXX_FEATURE:0cxx_reference_qualified_functions
+    Feature record: CXX_FEATURE:0cxx_relaxed_constexpr
+    Feature record: CXX_FEATURE:0cxx_return_type_deduction
+    Feature record: CXX_FEATURE:0cxx_right_angle_brackets
+    Feature record: CXX_FEATURE:0cxx_rvalue_references
+    Feature record: CXX_FEATURE:0cxx_sizeof_member
+    Feature record: CXX_FEATURE:0cxx_static_assert
+    Feature record: CXX_FEATURE:0cxx_strong_enums
+    Feature record: CXX_FEATURE:1cxx_template_template_parameters
+    Feature record: CXX_FEATURE:0cxx_thread_local
+    Feature record: CXX_FEATURE:0cxx_trailing_return_types
+    Feature record: CXX_FEATURE:0cxx_unicode_literals
+    Feature record: CXX_FEATURE:0cxx_uniform_initialization
+    Feature record: CXX_FEATURE:0cxx_unrestricted_unions
+    Feature record: CXX_FEATURE:0cxx_user_literals
+    Feature record: CXX_FEATURE:0cxx_variable_templates
+    Feature record: CXX_FEATURE:0cxx_variadic_macros
+    Feature record: CXX_FEATURE:0cxx_variadic_templates

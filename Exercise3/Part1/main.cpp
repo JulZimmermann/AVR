@@ -6,14 +6,13 @@ constexpr int ALL_OUTPUT = 0xff;
 constexpr int ALL_INPUT = 0;
 
 int blink();
-void led(size_t count);
+void led(uint8_t count);
 
 int main() {
     DDRD = ALL_INPUT;
     DDRB = ALL_OUTPUT;
 
-    PORTB = 0;
-    PIND = 0;
+    PORTB = 0xFF;
 
     blink();
 
@@ -21,27 +20,25 @@ int main() {
 }
 
 int blink() {
-    size_t count = 0;
+    uint8_t count = 0;
     bool isPressed = false;
+    uint8_t flip = 0;
 
     while (true) {
-        if (!isPressed && !PIND) {
-            ++count;
-            isPressed = true;
+        flip  = (PIND ^ 0xFF);
 
-            led(count);
+        if (!isPressed && PIND) {
+            isPressed = true;
+            led(++count);
         }
 
-        if (PIND) {
+        if (!flip) {
             isPressed = false;
         }
+
     }
 }
 
-void led(size_t count) {
-    auto value = static_cast<uint8_t>(count % 8);
-
-    value = ~value;
-
-    PORTB = value;
+void led(uint8_t count) {
+    PORTB = count ^ 0xFF;
 }

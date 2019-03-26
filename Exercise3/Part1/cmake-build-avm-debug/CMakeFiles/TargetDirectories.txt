@@ -1,0 +1,4 @@
+/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/rebuild_cache.dir
+/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/edit_cache.dir
+/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/e3p1.dir
+/home/konrad/Dev/AVR/Exercise3/Part1/cmake-build-avm-debug/CMakeFiles/e3p1_flash.dir

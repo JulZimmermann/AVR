@@ -7,9 +7,9 @@ endif()
 set(CMAKE_CXX_STANDARD 17)
 
 set(CMAKE_CXX_FLAGS_RELEASE "-mmcu=atmega32 -O3")
-add_definitions(-DF_CPU=1000000)
+add_definitions(-DF_CPU1000000)
 
 project(AVR)
 
 add_subdirectory(Exercise3)
-
+add_subdirectory(Exercise4)

@@ -1,6 +1,6 @@
 SET(PART_NAME e3p1)
 
-add_executable(${PART_NAME} main.cpp)
+add_executable(${PART_NAME} main.cpp ../../Exercise3/Part1/main.cpp)
 
 add_custom_command(TARGET ${PART_NAME} POST_BUILD
         COMMAND avr-objcopy -O ihex ${PART_NAME} ${PART_NAME}.hex

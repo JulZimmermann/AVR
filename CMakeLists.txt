@@ -13,5 +13,9 @@ project(AVR)
 
 add_subdirectory(Util)
 
+if(NOT PORT)
+    set(PORT /dev/ttyUSB0)
+endif()
+
 add_subdirectory(Exercise3)
 

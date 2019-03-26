@@ -1,6 +1,7 @@
 
 #include <avr/io.h>
 #include <stddef.h>
+#include <util/delay.h>
 
 constexpr int ALL_OUTPUT = 0xff;
 constexpr int ALL_INPUT = 0;
@@ -25,7 +26,7 @@ int blink() {
     uint8_t flip = 0;
 
     while (true) {
-        flip  = (PIND ^ 0xFF);
+        flip  = PIND ^ 0xFF;
 
         if (!isPressed && flip) {
             isPressed = true;
@@ -34,6 +35,7 @@ int blink() {
 
         if (!flip) {
             isPressed = false;
+            _delay_ms(100);
         }
 
     }

@@ -11,5 +11,11 @@ add_definitions(-DF_CPU1000000)
 
 project(AVR)
 
+add_subdirectory(Util)
+
+if(NOT PORT)
+    set(PORT /dev/ttyUSB0)
+endif()
+
 add_subdirectory(Exercise3)
 add_subdirectory(Exercise4)

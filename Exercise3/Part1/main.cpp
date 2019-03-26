@@ -40,5 +40,5 @@ int blink() {
 }
 
 void led(uint8_t count) {
-    PORTB = count ^ 0xFF;
+    PORTB = static_cast<uint8_t>(count ^ 0xFF);
 }

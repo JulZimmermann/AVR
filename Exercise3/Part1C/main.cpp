@@ -3,28 +3,22 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
-#include <Pins.h>
-#include <Port.h>
-
-using Switches = Pins<Port::D>;
-using Leds = Pins<Port::B>;
-
 int main() {
-    Switches::setAllType<IOType::Input>();
-    Leds::setAllType<IOType::Output>();
+    DDRD = 0;
+    DDRB = 0xff;
 
     // Disable all LEDs. LEDs are active low
-    Leds::writeAllHigh();
+    PORTB = 0xff;
 
     uint8_t count = 0;
     bool werePressedBefore = false;
 
     while (true) {
-        const bool isPressedNow = Switches::anyLow<PortType::Pin>();
+        const bool isPressedNow = static_cast<const bool>(PIND ^ 0xff);
 
         if (!werePressedBefore && isPressedNow) {
             werePressedBefore = true;
-            Leds::writeMaskInverted(++count);
+            PORTB = static_cast<uint8_t>(++count ^ 0xff);
         } else {
             werePressedBefore = false;
             _delay_ms(100);

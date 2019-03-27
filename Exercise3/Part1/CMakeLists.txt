@@ -1,13 +1,3 @@
-SET(PART_NAME e3p1)
+add_flushable_executable(e3p1 main.cpp)
 
-add_executable(${PART_NAME} main.cpp ../../Exercise3/Part1/main.cpp)
-
-target_link_libraries(${PART_NAME} util)
-
-add_custom_command(TARGET ${PART_NAME} POST_BUILD
-        COMMAND avr-objcopy -O ihex ${PART_NAME} ${PART_NAME}.hex
-        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-        COMMENT "Creating HEX File")
-
-add_custom_target(${PART_NAME}_flash COMMAND avrdude -p m32 -c stk500 -U flash:w:${PART_NAME}.hex -P ${PORT}
-                                     DEPENDS ${PART_NAME})
+target_link_libraries(e3p1 util)

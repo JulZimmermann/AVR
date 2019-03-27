@@ -10,7 +10,6 @@ enum class Port {
 
 enum class PortType {
     Pin,
-    Ddr,
     Port
 };
 

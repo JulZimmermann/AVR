@@ -9,77 +9,88 @@
 
 #include "Port.h"
 
-template <Port TPort>
+template<Port TPort>
 class Pins {
 public:
 
-    template <IOType type>
-    void setType() {
+    // Set Type Methods
+
+    static void setTypeByMask(uint8_t mask) {
+        _SFR_IO8(ddr) = mask;
+    }
+
+    template<IOType type>
+    static void setAllType() {
         if constexpr (type == IOType::Input) {
-            doSetMask<PortType::Ddr>(0);
+            setTypeByMask(0);
         } else {
-            doSetMask<PortType::Ddr>(0xff);
+            setTypeByMask(0xff);
         }
     }
 
-    void writeMask(uint8_t i) {
-        doSetMask<PortType::Port>(i);
+    // Write Value Methods
+
+    static void writeMask(uint8_t mask) {
+        _SFR_IO8(port) = mask;
     }
 
-    void writeMaskInverted(uint8_t i) {
-        doSetMask<PortType::Port>(static_cast<uint8_t>(i ^ 0xff));
+    static void writeMaskInverted(uint8_t mask) {
+        writeMask(invert(mask));
     }
 
-    void writeAllHigh() {
-        doSetMask<PortType::Port>(0xff);
+    static void writeAllHigh() {
+        writeMask(0xff);
     }
 
-    void writeAllLow() {
-        doSetMask<PortType::Port>(0);
+    static void writeAllLow() {
+        writeMask(0);
     }
 
-    void writePin(uint8_t i, bool value) {
-        if(value) {
-            writePinTrue(i);
+    template<bool value>
+    static void writePin(uint8_t i) {
+        auto currentValue = readAll<PortType::Port>();
+
+        if constexpr (value) {
+            writeMask(static_cast<uint8_t>(currentValue | (1 << i)));
         } else {
-            writePinFalse(i);
+            writeMask(static_cast<uint8_t>(currentValue & ~(1 << i)));
         }
     }
 
-    void writePinTrue(uint8_t i) {
-        auto currentValue = readAll<PortType::Port>();
-        writeMask(static_cast<uint8_t>(currentValue | (1 << i)));
+    static void writePin(uint8_t i, bool value) {
+        if (value) {
+            writePin<true>(i);
+        } else {
+            writePin<false>(i);
+        }
     }
 
-    void writePinFalse(uint8_t i) {
-        auto currentValue = readAll<PortType::Port>();
-        writeMask(static_cast<uint8_t>(currentValue & ~(1 << i)));
+    // Read Value Methods
+
+    template<PortType type>
+    static uint8_t readAll() {
+        constexpr auto address = type == PortType::Pin ? pin : port;
+
+        return _SFR_IO8(address);
     }
 
-    template <PortType type>
-    uint8_t readAll() {
-        constexpr auto adress = getAdress<type>();
+    template<PortType type>
+    static bool readPin(uint8_t i) {
+        const auto value = readAll<type>();
 
-        return _SFR_IO8(adress);
+        return static_cast<bool>((value & (1 << i)) >> i);
     }
 
-    template <PortType type>
-    bool readPin(uint8_t i) {
-        uint8_t value = readAll<type>();
-
-        return static_cast<bool>((value & ( 1 << i )) >> i);
-    }
-
-    template <PortType type>
-    bool anyHigh() {
+    template<PortType type>
+    static bool anyHigh() {
         auto value = readAll<type>();
 
         return value;
     }
 
-    template <PortType type>
-    bool anyLow() {
-        return static_cast<bool>(readAll<type>() ^ 0xff);
+    template<PortType type>
+    static bool anyLow() {
+        return invert(readAll<type>());
     }
 
 private:
@@ -87,30 +98,9 @@ private:
     static constexpr uint8_t ddr = static_cast<const uint8_t>(static_cast<uint8_t>(TPort) + 1);
     static constexpr uint8_t port = static_cast<const uint8_t>(static_cast<uint8_t>(TPort) + 2);
 
-    template <PortType type>
-    static constexpr uint8_t getAdress() {
-        if constexpr(type == PortType::Ddr) {
-            return ddr;
-        }
-
-        if constexpr(type == PortType::Pin) {
-            return pin;
-        }
-
-        if constexpr(type == PortType::Port) {
-            return port;
-        }
-
-        return 0;
+    static uint8_t invert(uint8_t mask) {
+        return static_cast<uint8_t>(mask ^ 0xff);
     }
-
-    template <PortType type>
-    void doSetMask(uint8_t i) {
-        constexpr auto adress = getAdress<type>();
-        _SFR_IO8(adress) = i;
-    }
-
 };
-
 
 #endif //AVR_LED_H

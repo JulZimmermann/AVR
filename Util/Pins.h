@@ -19,13 +19,12 @@ public:
         _SFR_IO8(ddr) = mask;
     }
 
-    template<IOType type>
-    static void setAllType() {
-        if constexpr (type == IOType::Input) {
-            setTypeByMask(0);
-        } else {
-            setTypeByMask(0xff);
-        }
+    static void setAllInput() {
+        setTypeByMask(0);
+    }
+
+    static void setAllOutput() {
+        setTypeByMask(0xff);
     }
 
     // Write Value Methods
@@ -46,22 +45,13 @@ public:
         writeMask(0);
     }
 
-    template<bool value>
-    static void writePin(uint8_t i) {
+    static void writePin(uint8_t i, bool value) {
         auto currentValue = readAll<PortType::Port>();
 
-        if constexpr (value) {
+        if (value) {
             writeMask(static_cast<uint8_t>(currentValue | (1 << i)));
         } else {
             writeMask(static_cast<uint8_t>(currentValue & ~(1 << i)));
-        }
-    }
-
-    static void writePin(uint8_t i, bool value) {
-        if (value) {
-            writePin<true>(i);
-        } else {
-            writePin<false>(i);
         }
     }
 

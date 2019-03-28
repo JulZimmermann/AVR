@@ -10,8 +10,8 @@ using Switches = Pins<Port::D>;
 using Leds = Pins<Port::B>;
 
 int main() {
-    Switches::setAllType<IOType::Input>();
-    Leds::setAllType<IOType::Output>();
+    Switches::setAllInput();
+    Leds::setAllOutput();
 
     // Disable all LEDs. LEDs are active low
     Leds::writeAllHigh();

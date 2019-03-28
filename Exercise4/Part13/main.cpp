@@ -1,44 +1,40 @@
-
-#include <avr/io.h>
-#include <stddef.h>
-#include <util/delay.h>
+#include <Pins.h>
 #include <avr/interrupt.h>
 
-constexpr int ALL_HIGH = 0xFF;
-constexpr int ALL_LOW = 0;
-
-
+using Switches = Pins<Port::D>;
+using Speaker = Pins<Port::B>;
+using LEDs = Pins<Port::C>;
 
 int main() {
-    DDRD = ALL_LOW;
-    DDRB = ALL_HIGH;
-    DDRC = ALL_HIGH;
 
-    PORTB = ALL_LOW;
-    PORTC = ALL_HIGH;
+    Switches::setAllInput();
+    Speaker::setAllOutput();
+    LEDs::setAllOutput();
 
-    TIMSK |= (1<<OCIE0);                    // Enable Timer 0 compare interrupt
-    TCCR0 |= (1<<CS01)|(1<<CS00);           // Start timer0 with prescaler 1024
+    TCCR0 |= (1 << CS01) | (1 << CS00);           // Start timer0 with prescaler 1024
 
-    OCR0 = 100;
+    sei();
 
-//    TCCR1B |= (1<<CS12)|(1<<CS10);
-//    OCR1A = uint16_t (F_CPU/1024) - 1;
+    while (true) {
 
-//    TIMSK |= (1<<OCIE1A);
+        LEDs::writeMask(Switches::readAll<PortType::Pin>());
 
-    sei();                               // Set the I-bit in SREG
+        for (uint8_t i = 0; i < 8; ++i) {
+            const bool pressed = !Switches::readPin<PortType::Pin>(i);
+            if (pressed) {
+                OCR0 = (uint8_t) (255 / 8 * (i + 1));
+                TIMSK |= (1 << OCIE0);
+            }
+        }
 
-    for(;;);
+        if (!Switches::anyLow<PortType::Pin>()) {
+            TIMSK &= ~(1 << OCIE0);
+        }
+    }
 
-    return 0;
 }
 
 ISR (TIMER0_COMP_vect) {
-    PORTB = PORTB ^ ALL_HIGH;
-    TCNT0 =0;
+    PORTB = PORTB ^ 0xFF;
+    TCNT0 = 0;
 }
-
-//ISR (TIMER1_COMPA_vect) {
-//    PORTC = PORTC ^ ALL_HIGH;
-//}

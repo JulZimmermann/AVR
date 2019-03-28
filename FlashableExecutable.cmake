@@ -1,5 +1,5 @@
 if(NOT SERIAL_FLASH_PORT)
-    set(PORT /dev/ttyUSB0 CACHE STRING "Port for flashing the programm")
+    set(SERIAL_FLASH_PORT /dev/ttyUSB0 CACHE STRING "Port for flashing the programm")
 endif()
 
 function(add_flashable_executable)

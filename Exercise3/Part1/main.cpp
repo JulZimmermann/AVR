@@ -25,7 +25,9 @@ int main() {
         if (!werePressedBefore && isPressedNow) {
             werePressedBefore = true;
             Leds::writeMaskInverted(++count);
-        } else {
+        }
+
+        if (!isPressedNow) {
             werePressedBefore = false;
             _delay_ms(100);
         }

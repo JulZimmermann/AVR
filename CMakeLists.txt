@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS_RELEASE "-mmcu=atmega32 -Os -save-temps")
 add_definitions(-DF_CPU=1000000)
 
-include(FlushableExecutable.cmake)
+include(FlashableExecutable.cmake)
 
 project(AVR)
 

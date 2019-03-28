@@ -1,1 +1,1 @@
-add_flushable_executable(e4p13 main.cpp)
+add_flashable_executable(e4p13 main.cpp)

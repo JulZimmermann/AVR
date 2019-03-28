@@ -19,7 +19,9 @@ int main() {
         if (!werePressedBefore && isPressedNow) {
             werePressedBefore = true;
             PORTB = static_cast<uint8_t>(++count ^ 0xff);
-        } else {
+        }
+
+        if (!isPressedNow) {
             werePressedBefore = false;
             _delay_ms(100);
         }

@@ -10,6 +10,10 @@ function(add_flashable_executable)
             WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
             COMMENT "Creating hex file")
 
+    add_custom_command(TARGET ${ARGV0} POST_BUILD
+            COMMAND avr-size ${ARGV0}
+            WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+
     add_custom_target(${ARGV0}_flash COMMAND avrdude -p m32 -c stk500 -U flash:w:${ARGV0}.hex -P ${SERIAL_FLASH_PORT}
             DEPENDS ${ARGV0})
 endfunction()

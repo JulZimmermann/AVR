@@ -1,4 +1,3 @@
-
 #include <avr/io.h>
 #include <stddef.h>
 #include <avr/interrupt.h>
@@ -7,7 +6,6 @@
 #include <Clock.h>
 
 constexpr int ALL_HIGH = 0xFF;
-
 
 uint8_t count = 0;
 

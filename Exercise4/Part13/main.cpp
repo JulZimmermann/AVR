@@ -6,7 +6,6 @@ using Speaker = Pins<Port::B>;
 using LEDs = Pins<Port::C>;
 
 int main() {
-
     Switches::setAllInput();
     Speaker::setAllOutput();
     LEDs::setAllOutput();

@@ -28,6 +28,12 @@ int main() {
 
 ISR (TIMER1_COMPA_vect) {
         ++count;
-        PORTC = ~count;
+
+        uint8_t left = count / 10;
+        uint8_t right = count % 10;
+
+        uint8_t erg = left << 4 | right;
+
+        PORTC = ~erg;
 }
 

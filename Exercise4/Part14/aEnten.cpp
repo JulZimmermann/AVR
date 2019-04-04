@@ -33,6 +33,12 @@ int main() {
     enten.addNote(Note::a, NoteLength::achtel);
     enten.addNote(Note::g, NoteLength::viertel);
     enten.addNote(Note::pause, NoteLength::viertel);
+    enten.addNote(Note::a, NoteLength::achtel);
+    enten.addNote(Note::a, NoteLength::achtel);
+    enten.addNote(Note::a, NoteLength::achtel);
+    enten.addNote(Note::a, NoteLength::achtel);
+    enten.addNote(Note::g, NoteLength::viertel);
+    enten.addNote(Note::pause, NoteLength::viertel);
     enten.addNote(Note::f, NoteLength::achtel);
     enten.addNote(Note::f, NoteLength::achtel);
     enten.addNote(Note::f, NoteLength::achtel);
@@ -45,15 +51,52 @@ int main() {
     enten.addNote(Note::g, NoteLength::achtel);
     enten.addNote(Note::c, NoteLength::viertel);
 
-    TIMSK |= (1 << OCIE1A);                               // Enable Timer 1 compare interrupt
-    TCCR1B |= (1 << WGM12) | (1 << CS12) | (1 << CS10);       // Start timer1 with prescaler 1024 and compare match reset
-    OCR1A = 0;
+    enten.addNote(Note::pause, NoteLength::ganz);
 
-    TCCR0 |= (1 << CS01) | (1 << CS00);           // Start timer0 with prescaler 1024
+    TIMSK |= (1 << OCIE1A);
+    TIMSK |= (1 << OCIE0);
+
+    TCCR1B |= (1 << WGM12) | (1 << CS12) | (1 << CS10);       // Start timer1 with prescaler 1024 and compare match reset
+    OCR1A = 10;
+
+    TCCR0 |= (1 << CS02) | (1 << CS00);           // Start timer0 with prescaler 1024
 
     sei();
 
     while (true);
+}
+
+void flashLed(Note note) {
+    uint8_t mask = 0;
+
+    switch(note) {
+        case Note::c:
+            mask |= 1 << 7;
+            break;
+        case Note::d:
+            mask |= 1 << 6;
+            break;
+        case Note::e:
+            mask |= 1 << 5;
+            break;
+        case Note::f:
+            mask |= 1 << 4;
+            break;
+        case Note::g:
+            mask |= 1 << 3;
+            break;
+        case Note::a:
+            mask |= 1 << 2;
+            break;
+        case Note::h:
+            mask |= 1 << 1;
+            break;
+        case Note::c1:
+            mask |= 1 << 0;
+            break;
+    }
+
+    LEDs::writeMaskInverted(mask);
 }
 
 ISR (TIMER0_COMP_vect) {
@@ -61,16 +104,32 @@ ISR (TIMER0_COMP_vect) {
     TCNT0 = 0;
 }
 
+bool pause = false;
+
 ISR (TIMER1_COMPA_vect) {
-    if (count < enten.currentSize) {
-        OCR0 = calcComp<uint8_t>(1024, static_cast<size_t>(enten.notes[count]));
-        OCR1A = calcComp<uint16_t>(1024, static_cast<size_t>(enten.noteLengths[count]));
+    count %= enten.currentSize;
 
-        TIMSK |= (1 << OCIE0);
-        ++count;
-    } else {
-        count = 0;
+    if(pause) {
+        TIMSK &= ~(1 << OCIE0);
+        OCR1A = calcComp<uint16_t>(1024, 50);
+
+        pause = false;
+
+        return;
     }
-}
 
+    flashLed(enten.notes[count]);
+
+    if(enten.notes[count] == Note::pause) {
+        TIMSK &= ~(1 << OCIE0);
+    } else {
+        TIMSK |= (1 << OCIE0);
+    }
+
+    OCR0 =  calcCompFreq<uint8_t>(1024, static_cast<size_t>(enten.notes[count]));
+    OCR1A = 3 * calcComp<uint16_t>(1024, static_cast<size_t>(enten.noteLengths[count]));
+
+    ++count;
+    pause = true;
+}
 

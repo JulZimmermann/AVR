@@ -2,9 +2,12 @@
 // Created by Lars on 01.04.2019.
 //
 
-#include "Song.h"
-#include <Clock.h>
 #include <avr/interrupt.h>
+
+#include <Clock.h>
+#include <Pins.h>
+
+#include "Song.h"
 
 using Switches = Pins<Port::D>;
 using Speaker = Pins<Port::B>;
@@ -50,23 +53,7 @@ int main() {
 
     sei();
 
-    while (true) {
-//        for(size_t i = 0; i < enten.currentSize; ++i){
-//
-//        }
-//        for (uint8_t i = 0; i < 8; ++i) {
-//            const bool pressed = !Switches::readPin<PortType::Pin>(i);
-//            if (pressed) {
-//                OCR0 = (uint8_t) (255 / 8 * (i + 1));
-//                TIMSK |= (1 << OCIE0);
-//            }
-//        }
-//
-//        if (!Switches::anyLow<PortType::Pin>()) {
-//            TIMSK &= ~(1 << OCIE0);
-//        }
-    }
-
+    while (true);
 }
 
 ISR (TIMER0_COMP_vect) {
@@ -76,8 +63,8 @@ ISR (TIMER0_COMP_vect) {
 
 ISR (TIMER1_COMPA_vect) {
     if (count < enten.currentSize) {
-        OCR0 = calcComp<uint8_t>(1024, enten.notes[count]);
-        OCR1A = calcComp<uint16_t>(1024, enten.noteLengths[count]);
+        OCR0 = calcComp<uint8_t>(1024, static_cast<size_t>(enten.notes[count]));
+        OCR1A = calcComp<uint16_t>(1024, static_cast<size_t>(enten.noteLengths[count]));
 
         TIMSK |= (1 << OCIE0);
         ++count;

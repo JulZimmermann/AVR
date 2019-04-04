@@ -5,6 +5,9 @@
 #ifndef AVR_CLOCK_H
 #define AVR_CLOCK_H
 
+#include <stdint.h>
+#include <stddef.h>
+
 constexpr uint32_t T_CPU = 8000000;
 
 template<typename T>

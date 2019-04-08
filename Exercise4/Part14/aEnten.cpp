@@ -13,8 +13,9 @@ using Switches = Pins<Port::D>;
 using Speaker = Pins<Port::B>;
 using LEDs = Pins<Port::C>;
 
+bool pause = false;
 int count = 0;
-Song<37> enten;
+Song<29> enten;
 
 int main() {
     Switches::setAllInput();
@@ -56,10 +57,10 @@ int main() {
     TIMSK |= (1 << OCIE1A);
     TIMSK |= (1 << OCIE0);
 
-    TCCR1B |= (1 << WGM12) | (1 << CS12) | (1 << CS10);       // Start timer1 with prescaler 1024 and compare match reset
+    TCCR1B |= (1 << WGM12) | (1 << CS12) | (1 << CS10);
     OCR1A = 10;
 
-    TCCR0 |= (1 << CS02) | (1 << CS00);           // Start timer0 with prescaler 1024
+    TCCR0 |= (1 << CS02) | (1 << CS00);
 
     sei();
 
@@ -104,14 +105,12 @@ ISR (TIMER0_COMP_vect) {
     TCNT0 = 0;
 }
 
-bool pause = false;
-
 ISR (TIMER1_COMPA_vect) {
     count %= enten.currentSize;
 
     if(pause) {
         TIMSK &= ~(1 << OCIE0);
-        OCR1A = calcComp<uint16_t>(1024, 50);
+        OCR1A = calcCompTime<uint16_t>(1024, 50);
 
         pause = false;
 
@@ -127,7 +126,7 @@ ISR (TIMER1_COMPA_vect) {
     }
 
     OCR0 =  calcCompFreq<uint8_t>(1024, static_cast<size_t>(enten.notes[count]));
-    OCR1A = 3 * calcComp<uint16_t>(1024, static_cast<size_t>(enten.noteLengths[count]));
+    OCR1A = 3 * calcCompTime<uint16_t>(1024, static_cast<size_t>(enten.noteLengths[count]));
 
     ++count;
     pause = true;

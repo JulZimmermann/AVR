@@ -11,7 +11,7 @@
 constexpr uint32_t T_CPU = 8000000;
 
 template<typename T>
-constexpr T calcComp(uint16_t prescaler, size_t millis) {
+constexpr T calcCompTime(uint16_t prescaler, size_t millis) {
     return ((T_CPU / (double) prescaler) * (millis / 1000.0)) - 1;
 }
 

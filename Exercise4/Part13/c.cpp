@@ -17,7 +17,7 @@ int main() {
     TIMSK |= (1<<OCIE1A);                    // Enable Timer 0 compare interrupt
     TCCR1B |= (1<<WGM12)|(1<<CS12)|(1<<CS10);           // Start timer0 with prescaler 1024
 
-    OCR1A = calcComp<uint16_t>(1024, 1000);
+    OCR1A = calcCompTime<uint16_t>(1024, 1000);
 
     sei();                               // Set the I-bit in SREG
 

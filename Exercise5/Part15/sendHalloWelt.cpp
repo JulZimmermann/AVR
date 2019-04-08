@@ -4,7 +4,7 @@
 
 #include <Pins.h>
 
-#include "UART.h"
+#include <UART.h>
 
 int main() {
     UART uart(9600);

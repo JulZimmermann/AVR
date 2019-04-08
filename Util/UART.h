@@ -6,14 +6,19 @@
 #define AVR_UART_H
 
 #include <stdint.h>
+#include <stddef.h>
 
 class UART {
 
 public:
     UART(uint16_t baud);
 
-    void writeByte(uint8_t c);
+    void writeByte(uint8_t byte);
     void writeString(const char* str);
+
+    uint8_t readByte();
+    void readNByte(size_t size, uint8_t* buffer);
+    void readString(char* string, size_t stringSize);
 
 private:
     static constexpr uint32_t SYSTEM_CLOCK = 8000000;

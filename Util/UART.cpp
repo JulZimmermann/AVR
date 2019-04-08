@@ -8,14 +8,20 @@
 
 #include <stddef.h>
 
-UART::UART(uint16_t baud) {
-    setBaud(baud);
-
-    //Enable UART
+void UART::enableSync() {
+    //Enable sync UART
     UCSRB = (1 << RXEN) | (1 << TXEN);
 
     //Set Frame format: 8 bit data and 2 stop bits
     UCSRC = (1 << URSEL) | (1 << USBS) | (3 << UCSZ0);
+}
+
+void UART::enableAsync() {
+    //Enable async UART
+    UCSRB = (1 << RXEN) | (1 << TXEN) | (1 << RXCIE);
+
+    //Set Frame format: 8 bit data and 1 stop bits
+    UCSRC = (1 << URSEL) | (1 << UCSZ1) | (1 << UCSZ0);
 }
 
 void UART::writeByte(uint8_t byte) {
@@ -66,4 +72,3 @@ void UART::setBaud(uint16_t baud) {
 constexpr uint16_t UART::calcUbrr(uint16_t baud) {
     return SYSTEM_CLOCK / (static_cast<uint32_t >(16) * baud) - 1;
 }
-

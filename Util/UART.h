@@ -11,20 +11,22 @@
 class UART {
 
 public:
-    UART(uint16_t baud);
+    static void enableSync();
+    static void enableAsync();
 
-    void writeByte(uint8_t byte);
-    void writeString(const char* str);
+    static void setBaud(uint16_t baud);
 
-    uint8_t readByte();
-    void readNByte(size_t size, uint8_t* buffer);
-    void readString(char* string, size_t stringSize);
+    static void writeByte(uint8_t byte);
+    static void writeString(const char* str);
+
+    static uint8_t readByte();
+    static void readNByte(size_t size, uint8_t* buffer);
+    static void readString(char* string, size_t stringSize);
 
 private:
     static constexpr uint32_t SYSTEM_CLOCK = 8000000;
 
-    void setBaud(uint16_t baud);
-    constexpr uint16_t calcUbrr(uint16_t baud);
+    static constexpr uint16_t calcUbrr(uint16_t baud);
 
 };
 

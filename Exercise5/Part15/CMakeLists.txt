@@ -6,3 +6,6 @@ target_link_libraries(e5p15Echo util)
 
 add_flashable_executable(e5p15Led led.cpp)
 target_link_libraries(e5p15Led util)
+
+add_flashable_executable(e5p15LedAsync ledAsync.cpp)
+target_link_libraries(e5p15LedAsync util)

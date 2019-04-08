@@ -4,6 +4,7 @@
 
 #ifndef AVR_NOTE_H
 #define AVR_NOTE_H
+
 enum class Note{
     c1 = 262,
     h = 247,
@@ -23,4 +24,5 @@ enum class NoteLength{
     achtel = 125,
     sechzentel = 63
 };
+
 #endif //AVR_NOTE_H

@@ -1,22 +1,26 @@
-//
-// Created by julian on 04.04.19.
-//
-
 #ifndef AVR_PLAYER_H
 #define AVR_PLAYER_H
 
-template<int size>
+#include <avr/interrupt.h>
+
+#include <InterruptHandler.h>
+#include <Pins.h>
+#include <Clock.h>
+
+#include "Song.h"
+
+template <int songSize, Port SpeakerPort, Port LEDsPort>
 class Player {
 
 public:
-    static void playSong(const Song<size>& song) {
-        TIMSK |= (1 << OCIE1A);
-        TIMSK |= (1 << OCIE0);
+    static void playSong(Song<songSize>& song) {
+        Player::song = &song;
 
-        TCCR1B |= (1 << WGM12) | (1 << CS12) | (1 << CS10);       // Start timer1 with prescaler 1024 and compare match reset
+        TIMSK = (1 << OCIE1A) | (1 << OCIE0);
+        TCCR1B |= (1 << WGM12) | (1 << CS12) | (1 << CS10);
+        TCCR0 |= (1 << CS02) | (1 << CS00);
+
         OCR1A = 10;
-
-        TCCR0 |= (1 << CS02) | (1 << CS00);           // Start timer0 with prescaler 1024
 
         sei();
 
@@ -25,10 +29,64 @@ public:
 
 
 private:
-    static int count = 0;
-    static Song<size> song;
+    using Speaker = Pins<SpeakerPort>;
+    using LEDs = Pins<LEDsPort>;
 
-    static void flashLed(Note note) {
+    static constexpr uint16_t prescalerFactor = 1024;
+    static constexpr uint16_t noteSpeedFactor = 3;
+
+    static int currentNoteIdx;
+    static bool pause;
+    static Song<songSize>* song;
+
+    // Interrupt for TIMER_1. Creating the oscillation of the speaker
+    CPP_ISR(TIMER0_COMP_vect) {
+        const auto mask = Speaker::readAllPin();
+
+        Speaker::writeMaskInverted(mask);
+
+        TCNT0 = 0;
+    }
+
+    // Interrupt for TIMER_1. Creating the frequency and the length of a note
+    CPP_ISR(TIMER1_COMPA_vect) {
+        // Handle pause between notes
+        if(pause) {
+            TIMSK &= ~(1 << OCIE0);
+            OCR1A = calcCompTime<uint16_t>(1024, 50);
+
+            pause = false;
+
+            return;
+        }
+
+        // Handle the note "pause"
+        if(song->notes[currentNoteIdx] == Note::pause) {
+            TIMSK &= ~(1 << OCIE0);
+        } else {
+            TIMSK |= (1 << OCIE0);
+        }
+
+        flashLEDs(song->notes[currentNoteIdx]);
+
+        // Set frequency and length of current note
+        OCR0 =  calcCompFreq<uint8_t>(prescalerFactor, currentNoteFreq());
+        OCR1A = noteSpeedFactor * calcCompTime<uint16_t>(prescalerFactor, currentNoteLength());
+
+        // Increase currentNoteIdx and set next call to pause
+        currentNoteIdx = (currentNoteIdx + 1) % song->size;
+        pause = true;
+    }
+
+    static size_t currentNoteFreq() {
+        return static_cast<size_t>(song->notes[currentNoteIdx]);
+    }
+
+    static size_t currentNoteLength() {
+        return static_cast<size_t>(song->noteLengths[currentNoteIdx]);
+    }
+
+    static void flashLEDs(Note note) {
         uint8_t mask = 0;
 
         switch(note) {
@@ -56,44 +114,21 @@ private:
             case Note::c1:
                 mask |= 1 << 0;
                 break;
+            case Note::pause:break;
         }
 
         LEDs::writeMaskInverted(mask);
     }
 
-    static void soundInterrupt() __asm__("__vector_10") __attribute__((__signal__, __used__, __externally_visible__)) {
-        PORTB = PORTB ^ 0xFF;
-        TCNT0 = 0;
-    }
-
-    static void playInterrupt() __asm__("__vector_7") __attribute__((__signal__, __used__, __externally_visible__)) {
-        count %= enten.currentSize;
-
-        if(pause) {
-            TIMSK &= ~(1 << OCIE0);
-            OCR1A = calcComp<uint16_t>(1024, 50);
-
-            pause = false;
-
-            return;
-        }
-
-        flashLed(enten.notes[count]);
-
-        if(enten.notes[count] == Note::pause) {
-            TIMSK &= ~(1 << OCIE0);
-        } else {
-            TIMSK |= (1 << OCIE0);
-        }
-
-        OCR0 =  calcCompFreq<uint8_t>(1024, static_cast<size_t>(enten.notes[count]));
-        OCR1A = 3 * calcComp<uint16_t>(1024, static_cast<size_t>(enten.noteLengths[count]));
-
-        ++count;
-        pause = true;
-    }
-
 };
 
+template <int songSize, Port SpeakerPort, Port LEDsPort>
+int Player<songSize, SpeakerPort, LEDsPort>::currentNoteIdx = 0;
+
+template <int songSize, Port SpeakerPort, Port LEDsPort>
+bool Player<songSize, SpeakerPort, LEDsPort>::pause = false;
+
+template <int songSize, Port SpeakerPort, Port LEDsPort>
+Song<songSize>* Player<songSize, SpeakerPort, LEDsPort>::song = nullptr;
 
 #endif //AVR_PLAYER_H

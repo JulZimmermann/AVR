@@ -46,7 +46,7 @@ uint8_t UART::readByte() {
     return UDR;
 }
 
-void UART::readNByte(size_t size, uint8_t* buffer) {
+void UART::readNBytes(size_t size, uint8_t *buffer) {
     for(size_t i = 0; i < size; ++i) {
         buffer[i] = readByte();
     }

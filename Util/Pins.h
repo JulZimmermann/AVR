@@ -64,6 +64,10 @@ public:
         return _SFR_IO8(address);
     }
 
+    static uint8_t readAllPin() {
+        return _SFR_IO8(pin);
+    }
+
     template<PortType type>
     static bool readPin(uint8_t i) {
         const auto value = readAll<type>();

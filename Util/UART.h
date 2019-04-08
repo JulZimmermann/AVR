@@ -20,7 +20,7 @@ public:
     static void writeString(const char* str);
 
     static uint8_t readByte();
-    static void readNByte(size_t size, uint8_t* buffer);
+    static void readNBytes(size_t size, uint8_t *buffer);
     static void readString(char* string, size_t stringSize);
 
 private:

@@ -106,7 +106,7 @@ ISR (TIMER0_COMP_vect) {
 }
 
 ISR (TIMER1_COMPA_vect) {
-    count %= enten.currentSize;
+    count %= enten.size;
 
     if(pause) {
         TIMSK &= ~(1 << OCIE0);

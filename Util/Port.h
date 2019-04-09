@@ -8,15 +8,4 @@ enum class Port {
     A = 0x19,
 };
 
-enum class PortType {
-    Pin,
-    Port
-};
-
-enum class IOType {
-    Input,
-    Output
-};
-
-
 #endif //AVR_PORTS_H

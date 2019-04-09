@@ -41,7 +41,7 @@ private:
 
     // Interrupt for TIMER_1. Creating the oscillation of the speaker
     CPP_ISR(TIMER0_COMP_vect) {
-        const auto mask = Speaker::readAllPin();
+        const auto mask = Speaker::readAllPins();
 
         Speaker::writeMaskInverted(mask);
 

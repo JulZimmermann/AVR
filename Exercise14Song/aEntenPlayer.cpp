@@ -1,7 +1,3 @@
-//
-// Created by julian on 08.04.19.
-//
-
 #include "Player.h"
 
 constexpr int songSize = 29;
@@ -12,7 +8,7 @@ constexpr auto LEDsPort = Port::C;
 using Speaker = Pins<SpeakerPort>;
 using LEDs = Pins<LEDsPort>;
 
-using MyPlayer = Player<songSize, SpeakerPort, LEDsPort>;
+using EntenPlayer = Player<songSize, SpeakerPort, LEDsPort>;
 
 void fillSong(Song<songSize> &song);
 
@@ -23,7 +19,7 @@ int main() {
     Song<songSize> song;
     fillSong(song);
 
-    MyPlayer::playSong(song);
+    EntenPlayer::playSong(song);
 }
 
 void fillSong(Song<songSize> &song) {

@@ -52,8 +52,8 @@ void UART::readNBytes(size_t size, uint8_t *buffer) {
     }
 }
 
-void UART::readString(char *string, size_t stringSize) {
-    for(size_t i = 0; i < stringSize; ++i) {
+void UART::readString(char *string, size_t maxStringSize) {
+    for(size_t i = 0; i < maxStringSize; ++i) {
         string[i] = static_cast<char>(readByte());
 
         if(string[i] == '\0') {

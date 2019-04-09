@@ -1,0 +1,11 @@
+add_flashable_executable(uartSendHalloWelt sendHalloWelt.cpp)
+target_link_libraries(uartSendHalloWelt util)
+
+add_flashable_executable(uartEcho echo.cpp)
+target_link_libraries(uartEcho util)
+
+add_flashable_executable(e15UartLedSync led.cpp)
+target_link_libraries(e15UartLedSync util)
+
+add_flashable_executable(e15UartLedAsync ledAsync.cpp)
+target_link_libraries(e15UartLedAsync util)

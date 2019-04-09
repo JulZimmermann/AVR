@@ -1,3 +1,5 @@
+#include <avr/interrupt.h>
+
 #include <UART.h>
 #include <Pins.h>
 
@@ -12,14 +14,18 @@ int main() {
     LEDs::writeAllHigh();
 
     UART::setBaud(9600);
-    UART::enableSync();
+    UART::enableAsync();
+
+    sei();
 
     while(true) {
-        uint8_t ledMask = UART::readByte();
-        LEDs::writeMask(ledMask);
-
-        uint8_t buttonMask = Buttons::readAll<PortType::Pin>();
+        uint8_t buttonMask = Buttons::readAllPins();
         UART::writeByte(buttonMask);
     }
 
+}
+
+ISR(USART_RXC_vect) {
+    uint8_t ledMask = UDR;
+    LEDs::writeMask(ledMask);
 }

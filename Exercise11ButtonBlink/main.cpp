@@ -20,7 +20,7 @@ int main() {
     bool werePressedBefore = false;
 
     while (true) {
-        const bool isPressedNow = Switches::anyLow<PortType::Pin>();
+        const bool isPressedNow = Switches::anyLow();
 
         if (!werePressedBefore && isPressedNow) {
             werePressedBefore = true;

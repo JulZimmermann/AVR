@@ -11,8 +11,7 @@ project(AVR)
 
 add_subdirectory(Util)
 
-add_subdirectory(Exercise3/Part1)
-add_subdirectory(Exercise3/Part1C)
-add_subdirectory(Exercise4/Part13)
-add_subdirectory(Exercise4/Part14)
-add_subdirectory(Exercise5/Part15)
+add_subdirectory(Exercise11ButtonBlink)
+add_subdirectory(Exercise13LedTimer)
+add_subdirectory(Exercise14Song)
+add_subdirectory(Exercise15UART)

@@ -12,6 +12,7 @@
 template<Port TPort>
 class Pins {
 public:
+    Pins() = delete;
 
     // Set Type Methods
 
@@ -28,6 +29,10 @@ public:
     }
 
     // Write Value Methods
+
+    static void invertCurrentValue() {
+        writeMaskInverted(readAllPins());
+    }
 
     static void writeMask(uint8_t mask) {
         _SFR_IO8(port) = mask;
@@ -46,7 +51,7 @@ public:
     }
 
     static void writePin(uint8_t i, bool value) {
-        auto currentValue = readAll<PortType::Port>();
+        const uint8_t currentValue = readAllPorts();
 
         if (value) {
             writeMask(static_cast<uint8_t>(currentValue | (1 << i)));
@@ -57,34 +62,26 @@ public:
 
     // Read Value Methods
 
-    template<PortType type>
-    static uint8_t readAll() {
-        constexpr auto address = type == PortType::Pin ? pin : port;
-
-        return _SFR_IO8(address);
-    }
-
-    static uint8_t readAllPin() {
+    static uint8_t readAllPins() {
         return _SFR_IO8(pin);
     }
 
-    template<PortType type>
-    static bool readPin(uint8_t i) {
-        const auto value = readAll<type>();
+    static uint8_t readAllPorts() {
+        return _SFR_IO8(port);
+    }
+
+    static bool readSinglePin(uint8_t i) {
+        const uint8_t value = readAllPins();
 
         return static_cast<bool>((value & (1 << i)) >> i);
     }
 
-    template<PortType type>
     static bool anyHigh() {
-        auto value = readAll<type>();
-
-        return value;
+        return static_cast<bool>(readAllPins());
     }
 
-    template<PortType type>
     static bool anyLow() {
-        return invert(readAll<type>());
+        return static_cast<bool>(invert(readAllPins()));
     }
 
 private:
@@ -92,7 +89,7 @@ private:
     static constexpr uint8_t ddr = static_cast<const uint8_t>(static_cast<uint8_t>(TPort) + 1);
     static constexpr uint8_t port = static_cast<const uint8_t>(static_cast<uint8_t>(TPort) + 2);
 
-    static uint8_t invert(uint8_t mask) {
+    constexpr static uint8_t invert(uint8_t mask) {
         return static_cast<uint8_t>(mask ^ 0xff);
     }
 };

@@ -1,0 +1,6 @@
+add_flashable_executable(e13aLedBlink aLedBlink.cpp)
+
+add_flashable_executable(e13bLedCounter bLedCount.cpp)
+
+add_flashable_executable(e14cLedCounterBCD cLedCountBCE.cpp)
+target_link_libraries(e14cLedCounterBCD util)

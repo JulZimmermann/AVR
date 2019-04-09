@@ -1,7 +1,3 @@
-//
-// Created by Lars on 01.04.2019.
-//
-
 #include <avr/interrupt.h>
 
 #include <Clock.h>

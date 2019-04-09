@@ -3,7 +3,7 @@
 #include <UART.h>
 #include <Pins.h>
 
-using LEDs = Pins<Port::C>;
+using LEDs = Pins<Port::B>;
 using Buttons = Pins<Port::A>;
 
 int main() {

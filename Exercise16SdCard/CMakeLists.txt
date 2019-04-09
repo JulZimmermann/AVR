@@ -1,0 +1,2 @@
+add_flashable_executable(e16SdCard main.cpp)
+target_link_libraries(e16SdCard util)

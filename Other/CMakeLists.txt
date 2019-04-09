@@ -1,0 +1,2 @@
+add_flashable_executable(blinkPressedButton blinkPressedButton.cpp)
+target_link_libraries(blinkPressedButton util)

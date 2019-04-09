@@ -1,6 +1,5 @@
 #include <stddef.h>
 
-#include <avr/io.h>
 #include <util/delay.h>
 
 #include <Pins.h>

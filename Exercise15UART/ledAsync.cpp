@@ -26,6 +26,6 @@ int main() {
 }
 
 ISR(USART_RXC_vect) {
-    uint8_t ledMask = UDR;
+    const uint8_t ledMask = UDR;
     LEDs::writeMask(ledMask);
 }
